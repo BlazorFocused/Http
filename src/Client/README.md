@@ -7,9 +7,9 @@ Streamlines HttpClient operations, configuration, request mapping, and dependenc
 
 ## NuGet Packages
 
-| Package                                                                                | Description     |
-| -------------------------------------------------------------------------------------- | --------------- |
-| [BlazorFocused.Http.Client](https://www.nuget.org/packages/BlazorFocused.Http.Client/) | Sample Template |
+| Package                                                                                | Description                                                                                 |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [BlazorFocused.Http.Client](https://www.nuget.org/packages/BlazorFocused.Http.Client/) | Streamlines HttpClient operations, configuration, request mapping, and dependency injection |
 
 ## Documentation
 
