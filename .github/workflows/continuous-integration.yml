@@ -1,0 +1,46 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "docs/**"
+      - "**/README.md"
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "docs/**"
+      - "**/README.md"
+  release:
+    types:
+      - published
+
+jobs:
+  build-client:
+    uses: ./.github/workflows/template-build-test-project.yml
+    with:
+      name: "BlazorFocused.Http.Client Build"
+      source-directory: ./src/Client/src
+      source-project: BlazorFocused.Http.Client.csproj
+      test-directory: ./src/Client/test
+      test-project: BlazorFocused.Http.Client.Test.csproj
+
+  build-samples:
+    uses: ./.github/workflows/template-build-test-solution.yml
+    with:
+      name: "BlazorFocused.Http.Samples Build"
+      working-directory: ./samples
+
+  release-client:
+    needs: [build-client, build-samples]
+    if: github.event_name == 'release'
+    uses: ./.github/workflows/template-release-nuget-package.yml
+    with:
+      name: "Template.Starter Release"
+      source-project-path: ./Client/src/BlazorFocused.Http.Client.csproj
+      source-release-path: ./Client/src/bin/Release
+      working-directory: ./src
+      version: ${{ github.event.release.tag_name }}
+    secrets: inherit

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Configuration", "_Configuration", "{29F3FEAB-CFED-467D-8953-8FBD56707CFF}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4FF3865D-3154-49E9-8B12-1A5A92FC4742}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFocused.Http.Client", "..\src\Client\src\BlazorFocused.Http.Client.csproj", "{D23D61F4-45D0-41BC-A051-ACD3180354AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientSample", "ClientSample\ClientSample.csproj", "{97C39B23-4C03-465E-A28D-811B7C413D80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D23D61F4-45D0-41BC-A051-ACD3180354AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23D61F4-45D0-41BC-A051-ACD3180354AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23D61F4-45D0-41BC-A051-ACD3180354AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23D61F4-45D0-41BC-A051-ACD3180354AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C39B23-4C03-465E-A28D-811B7C413D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C39B23-4C03-465E-A28D-811B7C413D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C39B23-4C03-465E-A28D-811B7C413D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C39B23-4C03-465E-A28D-811B7C413D80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D23D61F4-45D0-41BC-A051-ACD3180354AD} = {4FF3865D-3154-49E9-8B12-1A5A92FC4742}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3A52089-33A6-40DA-89B1-FE2A7F454E12}
+	EndGlobalSection
+EndGlobal
