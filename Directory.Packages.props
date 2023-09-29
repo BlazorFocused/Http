@@ -5,15 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup Label="Microsoft NuGet Packages (Source)" Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="Microsoft NuGet Packages (Source)" Condition="'$(TargetFramework)' == 'net7.0'">
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="Microsoft NuGet Packages (Source)" Condition="'$(TargetFramework)' == 'net8.0'">
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-rc.1.23419.4" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.0-rc.1.23419.4" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0-rc.1.23419.4" />
   </ItemGroup>
 
   <ItemGroup Label="Microsoft NuGet Packages (Test)">
