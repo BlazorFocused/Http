@@ -4,6 +4,7 @@
 // -------------------------------------------------------
 
 using BlazorFocused.Http.Client;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ClientSample;
 
@@ -14,8 +15,8 @@ internal class Program
 
     public static void Test()
     {
-        var test = new Class1();
+        IServiceCollection services = new ServiceCollection();
 
-        test.SampleMethod();
+        services.AddWebApiClient("Program");
     }
 }
