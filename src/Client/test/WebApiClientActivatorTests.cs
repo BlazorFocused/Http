@@ -4,7 +4,7 @@
 // -------------------------------------------------------
 
 using Bogus;
-using Microsoft.Extensions.DependencyInjection;
+using Moq;
 
 namespace BlazorFocused.Http.Client.Test;
 
@@ -14,15 +14,14 @@ public class WebApiClientActivatorTests
     public void Create_ShouldReturnWebApiClientFromRegisteredClient()
     {
         // Arrange
-        IServiceCollection services = new ServiceCollection();
         string expectedBaseAddress = new Faker().Internet.Url();
         string webApiClientName = new Faker().Random.AlphaNumeric(5);
+        Mock<IHttpClientFactory> mockHttpClientFactory = new();
 
-        services.AddWebApiClient(webApiClientName)
-            .ConfigureHttpClient(client => client.BaseAddress = new Uri(expectedBaseAddress));
+        mockHttpClientFactory.Setup(factory => factory.CreateClient(webApiClientName))
+            .Returns(new HttpClient() { BaseAddress = new Uri(expectedBaseAddress) });
 
-        IServiceProvider serviceProvider = services.BuildServiceProvider();
-        IWebApiClientActivator webApiClientActivator = serviceProvider.GetService<IWebApiClientActivator>();
+        IWebApiClientActivator webApiClientActivator = new WebApiClientActivator(mockHttpClientFactory.Object);
 
         // Act
         IWebApiClient actualWebApiClient = webApiClientActivator.Create(webApiClientName);

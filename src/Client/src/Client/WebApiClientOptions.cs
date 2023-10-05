@@ -7,10 +7,6 @@ namespace BlazorFocused.Http.Client.Client;
 
 internal class WebApiClientOptions
 {
-    public WebApiClientOptions()
-    {
-    }
-
     public string BaseAddress { get; set; }
 
     public Dictionary<string, string> DefaultRequestHeaders { get; set; } = new();
