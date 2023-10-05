@@ -18,7 +18,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../../BlazorFocused.Http.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)src/BlazorFocused.Http.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 </Project>

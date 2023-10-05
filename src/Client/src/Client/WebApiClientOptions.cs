@@ -5,7 +5,7 @@
 
 namespace BlazorFocused.Http.Client.Client;
 
-internal class WebApiOptions
+internal class WebApiClientOptions
 {
     public string BaseAddress { get; set; }
 

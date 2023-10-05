@@ -3,11 +3,33 @@
 // Licensed under the MIT License
 // -------------------------------------------------------
 
+using BlazorFocused.Http.Client.Client;
+
 namespace BlazorFocused.Http.Client;
 
-internal class WebApiClientActivator : IWebApiClientActivator
+/// <summary>
+/// Activates <see cref="IWebApiClient"/> instances
+/// </summary>
+public class WebApiClientActivator : IWebApiClientActivator
 {
-    public IWebApiClient Create(string name) => throw new NotImplementedException();
+    private readonly IHttpClientFactory httpClientFactory;
 
-    public static IWebApiClient Create(HttpClient httpClient) => throw new NotImplementedException();
+    /// <summary>
+    /// Creates a new <see cref="WebApiClientActivator"/> instance
+    /// </summary>
+    /// <param name="httpClientFactory">Client Factory existing in dependency injection</param>
+    public WebApiClientActivator(IHttpClientFactory httpClientFactory)
+    {
+        this.httpClientFactory = httpClientFactory;
+    }
+
+    /// <inheritdoc/>
+    public IWebApiClient Create(string name) => new WebApiClient(httpClientFactory.CreateClient(name));
+
+    /// <summary>
+    /// Creates a new <see cref="IWebApiClient"/> instance based on corresponding <see cref="HttpClient"/>
+    /// </summary>
+    /// <param name="httpClient">Base <see cref="HttpClient"/> used for request sending</param>
+    /// <returns><see cref="IWebApiClient"/> wrapper based on input <paramref name="httpClient"/></returns>
+    public static IWebApiClient Create(HttpClient httpClient) => new WebApiClient(httpClient);
 }
