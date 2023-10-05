@@ -9,10 +9,10 @@ internal class WebApiClient : IWebApiClient
 {
     public WebApiClient(HttpClient httpClient)
     {
-        this.Client = httpClient;
+        this.HttpClient = httpClient;
     }
 
-    internal HttpClient Client { get; }
+    public HttpClient HttpClient { get; }
 
     public IWebApiClientMethod Delete(string relativeUrl) => throw new NotImplementedException();
     public IWebApiClientMethod Get(string relativeUrl) => throw new NotImplementedException();
